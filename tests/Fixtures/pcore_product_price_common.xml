@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<mysqldump xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<database name="saas_test">
+	<table_data name="pcore_product_price_common">
+	<row>
+		<field name="commonProductPriceId">1</field>
+		<field name="productId">1</field>
+		<field name="specification">规格1</field>
+		<field name="price">111</field>
+		<field name="createTime">1456380262</field>
+		<field name="status">0</field>
+		<field name="statusTime">1456380262</field>
+	</row>
+	<row>
+		<field name="commonProductPriceId">2</field>
+		<field name="productId">1</field>
+		<field name="specification">规格2</field>
+		<field name="price">2222</field>
+		<field name="createTime">1456380262</field>
+		<field name="status">0</field>
+		<field name="statusTime">1456380262</field>
+	</row>
+	<row>
+		<field name="commonProductPriceId">3</field>
+		<field name="productId">3</field>
+		<field name="specification">规格3</field>
+		<field name="price">333</field>
+		<field name="createTime">1456380262</field>
+		<field name="status">0</field>
+		<field name="statusTime">1456380262</field>
+	</row>
+	</table_data>
+</database>
+</mysqldump>

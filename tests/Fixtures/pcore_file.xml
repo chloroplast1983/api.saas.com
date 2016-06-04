@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<mysqldump xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<database name="saas_test">
+	<table_data name="pcore_file">
+	<row>
+		<field name="fileId">1</field>
+		<field name="fileHash">fileHash1</field>
+		<field name="fileName">fileName1</field>
+		<field name="fileExt">fileExt1</field>
+		<field name="filePath">filePath1</field>
+		<field name="fileSize">10k</field>
+		<field name="fileTime">1456380262</field>
+		<field name="fileUid">1</field>
+	</row>
+	<row>
+		<field name="fileId">2</field>
+		<field name="fileHash">fileHash2</field>
+		<field name="fileName">fileName2</field>
+		<field name="fileExt">fileExt2</field>
+		<field name="filePath">filePath2</field>
+		<field name="fileSize">20k</field>
+		<field name="fileTime">1456380262</field>
+		<field name="fileUid">1</field>
+	</row>
+	</table_data>
+</database>
+</mysqldump>

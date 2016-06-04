@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<mysqldump xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<database name="saas_test">
+	<table_data name="pcore_product_description">
+	<row>
+		<field name="productId">1</field>
+		<field name="description">产品描述1</field>
+	</row>
+	<row>
+		<field name="productId">2</field>
+		<field name="description">产品描述2</field>
+	</row>
+	<row>
+		<field name="productId">3</field>
+		<field name="description">产品描述3</field>
+	</row>
+	</table_data>
+</database>
+</mysqldump>

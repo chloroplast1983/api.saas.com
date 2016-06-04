@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<mysqldump xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<database name="saas_test">
+	<table_data name="pcore_saas_user_bank_account">
+	<row>
+		<field name="userBankAccountId">1</field>
+		<field name="userId">1</field>
+		<field name="bankCardHolderName">bankCardHolderName1</field>
+		<field name="bankCardNumber">bankCardNumber1</field>
+		<field name="bankCardCellphone">11111111111</field>
+		<field name="createTime">1456380262</field>
+		<field name="updateTime">1456380262</field>
+	</row>
+	<row>
+		<field name="userBankAccountId">2</field>
+		<field name="userId">2</field>
+		<field name="bankCardHolderName">bankCardHolderName2</field>
+		<field name="bankCardNumber">bankCardNumber2</field>
+		<field name="bankCardCellphone">22222222222</field>
+		<field name="createTime">1456380262</field>
+		<field name="updateTime">1456380262</field>
+	</row>
+	<row>
+		<field name="userBankAccountId">3</field>
+		<field name="userId">3</field>
+		<field name="bankCardHolderName">bankCardHolderName3</field>
+		<field name="bankCardNumber">bankCardNumber3</field>
+		<field name="bankCardCellphone">33333333333</field>
+		<field name="createTime">1456380262</field>
+		<field name="updateTime">1456380262</field>
+	</row>
+	</table_data>
+</database>
+</mysqldump>

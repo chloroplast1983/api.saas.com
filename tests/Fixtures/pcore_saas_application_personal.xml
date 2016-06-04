@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<mysqldump xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<database name="saas_test">
+	<table_data name="pcore_saas_application_personal">
+	<row>
+		<field name="userId">1</field>
+		<field name="title">title1</field>
+		<field name="contactPeople">contactPeople1</field>
+		<field name="contactPeoplePhone">111111111</field>
+		<field name="contactPeopleQQ">111111</field>
+		<field name="province">1</field>
+		<field name="city">3</field>
+		<field name="address">address1</field>
+		<field name="identifyCardFrontPhoto">1</field>
+		<field name="identifyCardBackPhoto">2</field>
+		<field name="tourGuide">3</field>
+		<field name="bankCardHolderName">bankCardHolderName1</field>
+		<field name="bankCardNumber">1111</field>
+		<field name="bankCardCellphone">111111</field>
+		<field name="createTime">1111111111</field>
+		<field name="updateTime">1111111111</field>
+		<field name="statusTime">1111111111</field>
+		<field name="status">0</field>
+	</row>
+	<row>
+		<field name="userId">2</field>
+		<field name="title">title2</field>
+		<field name="contactPeople">contactPeople2</field>
+		<field name="contactPeoplePhone">2222222222</field>
+		<field name="contactPeopleQQ">2222222</field>
+		<field name="province">1</field>
+		<field name="city">3</field>
+		<field name="address">address2</field>
+		<field name="identifyCardFrontPhoto">1</field>
+		<field name="identifyCardBackPhoto">2</field>
+		<field name="tourGuide">3</field>
+		<field name="bankCardHolderName">bankCardHolderName2</field>
+		<field name="bankCardNumber">2222</field>
+		<field name="bankCardCellphone">2222222</field>
+		<field name="createTime">1111111112</field>
+		<field name="updateTime">1111111112</field>
+		<field name="statusTime">1111111112</field>
+		<field name="status">0</field>
+	</row>
+	</table_data>
+</database>
+</mysqldump>

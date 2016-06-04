@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<mysqldump xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<database name="saas_test">
+	<table_data name="pcore_product_slide">
+	<row>
+		<field name="productSlideId">1</field>
+		<field name="productId">1</field>
+		<field name="fileId">1</field>
+		<field name="createTime">1456380262</field>
+		<field name="status">0</field>
+		<field name="statusTime">1456380262</field>
+	</row>
+	<row>
+		<field name="productSlideId">2</field>
+		<field name="productId">1</field>
+		<field name="fileId">2</field>
+		<field name="createTime">1456380262</field>
+		<field name="status">0</field>
+		<field name="statusTime">1456380262</field>
+	</row>
+	<row>
+		<field name="productSlideId">3</field>
+		<field name="productId">3</field>
+		<field name="fileId">3</field>
+		<field name="createTime">1456380262</field>
+		<field name="status">0</field>
+		<field name="statusTime">1456380262</field>
+	</row>
+	</table_data>
+</database>
+</mysqldump>

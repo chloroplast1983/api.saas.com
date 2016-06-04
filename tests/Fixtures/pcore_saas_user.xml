@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<mysqldump xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<database name="saas_test">
+	<table_data name="pcore_saas_user">
+	<row>
+		<field name="userId">1</field>
+		<field name="cellPhone">18700990442</field>
+		<field name="userName">userName1</field>
+		<field name="nickName">nickName1</field>
+		<field name="password">d51bb756bcd7c909bdd96a534d0beb44</field>
+		<field name="salt">qwer</field>
+		<field name="type">0</field>
+		<field name="signUpTime">1456380262</field>
+		<field name="updateTime">1456380262</field>
+		<field name="status">0</field>
+		<field name="statusTime">1456380262</field>
+	</row>
+	<row>
+		<field name="userId">2</field>
+		<field name="cellPhone">15129392661</field>
+		<field name="userName">userName2</field>
+		<field name="nickName">nickName2</field>
+		<field name="password">41d2980a04aecc516f88b42899abd948</field>
+		<field name="salt">asdf</field>
+		<field name="type">0</field>
+		<field name="signUpTime">1456380277</field>
+		<field name="updateTime">1456380277</field>
+		<field name="status">0</field>
+		<field name="statusTime">1456380277</field>
+	</row>
+	<row>
+		<field name="userId">3</field>
+		<field name="cellPhone">13571779122</field>
+		<field name="userName">userName3</field>
+		<field name="nickName">nickName3</field>
+		<field name="password">d40be954e1ec52317487e0ea2640dea9</field>
+		<field name="salt">zxcv</field>
+		<field name="type">0</field>
+		<field name="signUpTime">1456380788</field>
+		<field name="updateTime">1456380788</field>
+		<field name="status">0</field>
+		<field name="statusTime">1456380788</field>
+	</row>
+	</table_data>
+</database>
+</mysqldump>

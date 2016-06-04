@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<mysqldump xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<database name="saas_test">
+	<table_data name="pcore_product">
+	<row>
+		<field name="productId">1</field>
+		<field name="name">产品名称1</field>
+		<field name="category">1</field>
+		<field name="feature">特色1</field>
+		<field name="userId">1</field>
+		<field name="createTime">1456380262</field>
+		<field name="updateTime">1456380262</field>
+		<field name="status">0</field>
+		<field name="statusTime">1456380262</field>
+	</row>
+	<row>
+		<field name="productId">2</field>
+		<field name="name">产品名称2</field>
+		<field name="category">1</field>
+		<field name="feature">特色2</field>
+		<field name="userId">1</field>
+		<field name="createTime">1456380262</field>
+		<field name="updateTime">1456380262</field>
+		<field name="status">2</field>
+		<field name="statusTime">1456380262</field>
+	</row>
+	<row>
+		<field name="productId">3</field>
+		<field name="name">产品名称3</field>
+		<field name="category">2</field>
+		<field name="feature">特色3</field>
+		<field name="userId">1</field>
+		<field name="createTime">1456380262</field>
+		<field name="updateTime">1456380262</field>
+		<field name="status">0</field>
+		<field name="statusTime">1456380262</field>
+	</row>
+	</table_data>
+</database>
+</mysqldump>
