@@ -2,7 +2,7 @@
 //powered by chloroplast
 namespace System\Classes;
 
-use Core;
+use Marmot\Core;
 
 /**
  * 应用层服务父类,控制应用服务层的 Request 和 Reponse

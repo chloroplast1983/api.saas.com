@@ -34,19 +34,19 @@
 
 ---
 
-###onSale
+###PRODUCT_STATUS_ON_SALE
 
 **出售中**商品上传后的状态.可选值:onSale(出售中),inStock(仓库中);配置文件内使用`PRODUCT_STATUS_ON_SALE`.
 
-###inStock
+###PRODUCT_STATUS_IN_STOCK
 
 **仓库中**商品上传后的状态.可选值:onSale(出售中),inStock(仓库中);配置文件内使用`PRODUCT_STATUS_IN_STOCK`.
 
-###delete
+###PRODUCT_STATUS_DELETE
 
 **删除**商品删除状态.配置文件内使用`PRODUCT_STATUS_DELETE`.
 
-###permanentlyDelete
+###PRODUCT_STATUS_PERMANENTLY_DELETE
 
 **永久删除**商品删除状态.配置文件内使用`PRODUCT_STATUS_PERMANENTLY_DELETE`.
 

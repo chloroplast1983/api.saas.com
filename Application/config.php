@@ -81,24 +81,6 @@ define('APPLICATION_VERIFIED', 2);
  */
 define('APPLICATION_DECLINE', -2);
 
-//手机短信
-/**
- * @var string SMS_SAAS_SIGNUP_MESSAGE saas用户手机注册短信
- */
-define('SMS_SAAS_SIGNUP_MESSAGE', '手机短信注册验证码为[%s]。');
-/**
- * @var string SMS_SAAS_RESTPASSWORD_MESSAGE saas用户重置密码短信
- */
-define('SMS_SAAS_REST_PASSWORD_MESSAGE', '手机短信注册验证码为[%s]。');
-/**
- * @var string SMS_WEB_SIGNUP_MESSAGE web(网店)用户注册短信
- */
-define('SMS_WEB_SIGNUP_MESSAGE', '您的验证码为: %s，请不要把验证码泄露给其他人，如非本人操作，请不要理会。');
-/**
- * @var string SMS_WEB_RESTPASSWORD_MESSAGE web(网店)用户重置密码短信
- */
-define('SMS_WEB_REST_PASSWORD_MESSAGE', '手机短信注册验证码为[%s]。');
-
 //商品product: category 商品类型
 /**
  * @var int PRODUCT_CATEGORY_TOURIST 旅游线路型商品

@@ -1,4 +1,8 @@
 <?php
+namespace System\Classes;
+
+use Marmot\Core;
+use tests;
 
 /**
  * 因为cache是一个抽象类,所以我们需要mock一个仿件对象出来用于我们实际的测试.
@@ -12,7 +16,7 @@
  * @author chloroplast
  * @version 1.0.20160218
  */
-class CacheTest extends PHPUnit_Framework_TestCase
+class CacheTest extends tests\GenericTestCase
 {
 
     private $stub;
@@ -41,7 +45,7 @@ class CacheTest extends PHPUnit_Framework_TestCase
         unset($this->stub);
         unset($this->data);
         //清空缓存数据
-        Core::$_cacheDriver->flushAll();
+        Core::$cacheDriver->flushAll();
     }
 
     /**
@@ -57,7 +61,11 @@ class CacheTest extends PHPUnit_Framework_TestCase
         //循环检查数据已经保存成功,因为在cache层,有前缀
         //所以这里需要拼接cacheKeyPrefix
         foreach ($this->data as $key => $value) {
-            $this->assertEquals(Core::$_cacheDriver->fetch($this->cacheKeyPrefix.'_'.$key), $value, 'key: '.$key.' not equal value: '.$value);
+            $this->assertEquals(
+                Core::$cacheDriver->fetch($this->cacheKeyPrefix.'_'.$key),
+                $value,
+                'key: '.$key.' not equal value: '.$value
+            );
         }
     }
 
@@ -69,14 +77,17 @@ class CacheTest extends PHPUnit_Framework_TestCase
         
         //循环保存数据
         foreach ($this->data as $key => $value) {
-            $this->assertTrue(Core::$_cacheDriver->save($this->cacheKeyPrefix.'_'.$key, $value));
+            $this->assertTrue(Core::$cacheDriver->save($this->cacheKeyPrefix.'_'.$key, $value));
         }
 
         //循环通过get方法检查调取数据是否正确
         //invokeArgs:static method 传递 null
         foreach ($this->data as $key => $value) {
-            // $this->assertEquals($method->invokeArgs(null, array($key)),$value,'key: '.$key.' not equal value: '.$value);
-            $this->assertEquals($this->stub->get($key), $value, 'key: '.$key.' not equal value: '.$value);
+            $this->assertEquals(
+                $this->stub->get($key),
+                $value,
+                'key: '.$key.' not equal value: '.$value
+            );
         }
     }
 
@@ -90,7 +101,7 @@ class CacheTest extends PHPUnit_Framework_TestCase
         //因为在cache层,有前缀
         //所以这里需要拼接cacheKeyPrefix
         foreach ($this->data as $key => $value) {
-            $this->assertTrue(Core::$_cacheDriver->save($this->cacheKeyPrefix.'_'.$key, $value));
+            $this->assertTrue(Core::$cacheDriver->save($this->cacheKeyPrefix.'_'.$key, $value));
         }
 
         //循环删除数据,
@@ -101,7 +112,10 @@ class CacheTest extends PHPUnit_Framework_TestCase
 
         //检查数据是否删除成功
         foreach ($this->data as $key => $value) {
-            $this->assertEmpty(Core::$_cacheDriver->fetch($this->cacheKeyPrefix.'_'.$key), 'key: '.$key.' is not empty');
+            $this->assertEmpty(
+                Core::$cacheDriver->fetch($this->cacheKeyPrefix.'_'.$key),
+                'key: '.$key.' is not empty'
+            );
         }
     }
 
@@ -116,7 +130,7 @@ class CacheTest extends PHPUnit_Framework_TestCase
         //所以这里需要拼接cacheKeyPrefix
         $keys = '';
         foreach ($this->data as $key => $value) {
-            $this->assertTrue(Core::$_cacheDriver->save($this->cacheKeyPrefix.'_'.$key, $value), ' save fails');
+            $this->assertTrue(Core::$cacheDriver->save($this->cacheKeyPrefix.'_'.$key, $value), ' save fails');
             $keys[] = $key;
         }
 
@@ -131,9 +145,15 @@ class CacheTest extends PHPUnit_Framework_TestCase
 
         //我们删除一个key,再次测试hits数据和misses数据.我们删除第一个key和第二个key
         $delKey[] = $keys[0];
-        $this->assertTrue(Core::$_cacheDriver->delete($this->cacheKeyPrefix.'_'.$keys[0]), ' delete key: '.$key[0].' fails');
+        $this->assertTrue(
+            Core::$cacheDriver->delete($this->cacheKeyPrefix.'_'.$keys[0]),
+            ' delete key: '.$key[0].' fails'
+        );
         $delKey[] = $keys[1];
-        $this->assertTrue(Core::$_cacheDriver->delete($this->cacheKeyPrefix.'_'.$keys[1]), ' delete key: '.$key[1].' fails');
+        $this->assertTrue(
+            Core::$cacheDriver->delete($this->cacheKeyPrefix.'_'.$keys[1]),
+            ' delete key: '.$key[1].' fails'
+        );
         //我们弹出元素2次
         array_shift($this->data);
         array_shift($this->data);

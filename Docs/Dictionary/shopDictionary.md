@@ -6,7 +6,7 @@
 
 ---
 
-###shop.通用
+##shop.通用
 
 ---
 
@@ -25,7 +25,11 @@
 **地址**用户地址的表述.
 ###uninitialized
 
-**未初始化**对一个店铺还未开通(审核中)是的表述.###normal
+**未初始化**对一个店铺还未开通(审核中)是的表述.
+
+##shop.状态
+
+---###SHOP_STATUS_NORMAL
 **店铺状态:正常**店铺默认状态.配置文件内使用`SHOP_STATUS_NORMAL`.
-###blocked
+###SHOP_STATUS_BLOCKED
 **店铺状态:封闭**店铺默认状态.配置文件内使用`SHOP_STATUS_BLOCKED`.

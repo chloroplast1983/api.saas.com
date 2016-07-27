@@ -37,6 +37,7 @@ return [
     'System\Query\VectorQuery' => S_ROOT.'System/Query/VectorQuery.class.php',
     'System\Query\SearchQuery' => S_ROOT.'System/Query/SearchQuery.class.php',
     'System\Query\DataCacheQuery' => S_ROOT.'System/Query/DataCacheQuery.class.php',
+    'System\Query\RowQueryFindable' => S_ROOT.'System/Query/RowQueryFindable.class.php',
 
     //view
     'System\View\JsonApiResponseFormatter' => S_ROOT.'System/View/JsonApiResponseFormatter.class.php',

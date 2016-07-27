@@ -1,10 +1,14 @@
 <?php
+namespace tests\UnitTest;
+
+use Marmot\Core;
+
 /**
  * 测试框架核心类
  * @author chloroplast
  * @version 1.0.20160218
  */
-class CoreTest extends PHPUnit_Framework_TestCase
+class CoreTest extends \PHPUnit_Framework_TestCase
 {
 
     
@@ -32,16 +36,23 @@ class CoreTest extends PHPUnit_Framework_TestCase
         //计算文件总数 -- 结束
         //测试是否classMaps.php中的sizeof(array)等于文件总数
         $classMaps = include S_ROOT.'System/classMaps.php';
-        $this->assertEquals(sizeof($classMaps), $fileCounts, 'System file counts: '.$fileCounts.' not equal sizeof classMaps: '.sizeof($classMaps));
+        $this->assertEquals(
+            sizeof($classMaps),
+            $fileCounts,
+            'System file counts: '.$fileCounts.' not equal sizeof classMaps: '.sizeof($classMaps)
+        );
         
         //测试classMaps中的class是否自动加载正确
         foreach ($classMaps as $className => $classPath) {
-            $this->assertTrue(class_exists($className)||interface_exists($className), $className.' not autoload by '.$classPath);
+            $this->assertTrue(
+                class_exists($className)||interface_exists($className)||trait_exists($className),
+                $className.' not autoload by '.$classPath
+            );
         }
 
         //测试Application加载文件,HomeController
-        $homeController = new Home\Controller\IndexController();
-        $this->assertTrue($homeController instanceof Home\Controller\IndexController, 'Application not autoload');
+        $homeController = new \Home\Controller\IndexController();
+        $this->assertTrue($homeController instanceof \Home\Controller\IndexController, 'Application not autoload');
     }
 
     /**
@@ -75,7 +86,7 @@ class CoreTest extends PHPUnit_Framework_TestCase
     public function testInitContainer()
     {
         //测试容器已经被初始化了
-        $this->assertTrue(is_object(Core::$_container) && Core::$_container instanceof DI\Container);
+        $this->assertTrue(is_object(Core::$container) && Core::$container instanceof \DI\Container);
     }
 
     /**
@@ -83,7 +94,7 @@ class CoreTest extends PHPUnit_Framework_TestCase
      */
     public function testInitDb()
     {
-        $this->assertTrue(is_object(Core::$_dbDriver) && Core::$_dbDriver instanceof \System\Classes\MyPdo);
+        $this->assertTrue(is_object(Core::$dbDriver) && Core::$dbDriver instanceof \System\Classes\MyPdo);
     }
 
     /**
@@ -91,7 +102,10 @@ class CoreTest extends PHPUnit_Framework_TestCase
      */
     public function testInitCache()
     {
-        $this->assertTrue(is_object(Core::$_cacheDriver) && Core::$_cacheDriver instanceof \Doctrine\Common\Cache\MemcachedCache);
+        $this->assertTrue(
+            is_object(Core::$cacheDriver) &&
+            Core::$cacheDriver instanceof \Doctrine\Common\Cache\MemcachedCache
+        );
     }
 
     /**

@@ -2,11 +2,12 @@
 //powered by chloroplast
 namespace System\Classes;
 
-use Core;
+use Marmot\Core;
 use System\Classes\Filter;
 
 /**
- * 这里是基于yii2的request类作的修改,因为我们只是基于接口作框架处理开发.这里这里只是保留了接口的功能.
+ * 这里是基于yii2的request类作的修改,
+ * 因为我们只是基于接口作框架处理开发.这里这里只是保留了接口的功能.
  *
  * @author chloroplast
  * @version 1.0.20160413
@@ -231,7 +232,6 @@ class Request
      * If no parsers are configured for the current [[contentType]] it uses the PHP function `mb_parse_str()`
      * to parse the [[rawBody|request body]].
      * @return array the request parameters given in the request body.
-     * @throws \yii\base\InvalidConfigException if a registered parser does not implement the [[RequestParserInterface]].
      * @see getMethod()
      * @see getBodyParam()
      * @see setBodyParams()
@@ -239,17 +239,15 @@ class Request
     public function getBodyParams()
     {
         if ($this->bodyParams === null) {
-            if ($this->getMethod() === 'POST') {
+            //兼容HTTP_X_HTTP_METHOD_OVERRIDE
+            if ($this->getMethod() === 'POST' || $this->getMethod() == 'PUT') {
                 // PHP has already parsed the body so we have all params in $_POST
                 if (!empty($_POST)) {
                     $this->bodyParams = $_POST;
+                } else {
+                    $this->bodyParams = [];
+                    $this->bodyParams = json_decode($this->getRawBody(), true);
                 }
-                $this->bodyParams = [];
-                $this->bodyParams = json_decode($this->getRawBody(), true);
-            } elseif ($this->getMethod() == 'PUT') {
-                // 如果是PUT,我们默认传递发送json数组方便用于解析
-                $this->bodyParams = [];
-                $this->bodyParams = json_decode($this->getRawBody(), true);
             } else {
                 $this->bodyParams = [];
                 mb_parse_str($this->getRawBody(), $this->bodyParams);

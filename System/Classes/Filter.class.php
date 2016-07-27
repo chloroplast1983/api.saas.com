@@ -44,7 +44,7 @@ class Filter
     }
     
     //取消HTML代码（Array加强版）
-    static function htmlspecialcharsPlus($string)
+    public static function htmlspecialcharsPlus($string)
     {
         if (is_array($string)) {
             foreach ($string as $key => $val) {
@@ -88,7 +88,7 @@ class Filter
      */
     public function stripTagsAttributes($string, $allowtags = null, $allowattributes = null)
     {
- /*{{{*/
+
         $string = strip_tags($string, $allowtags);
 
         if (! is_null($allowattributes)) {
@@ -102,8 +102,6 @@ class Filter
                 $allowattributes = '(?<!' . $allowattributes . ')';
             }
             $expr = '/ [^ =]*' . $allowattributes . '=(\"[^\"]*\"|\'[^\']*\')/i';
-
-            //$string = preg_replace_callback('/<[^>]*>/i',function($matches) use($expr) { return preg_replace($expr, '', $matches[0]); }, $string);
         }
         // XSS protection: <a href="javascript: alert(...
         $string = preg_replace('/href=([\'"]).*?javascript:(.*)?\\1/i', 'href="#$2"', $string);
@@ -140,7 +138,9 @@ class Filter
         }
         if ($allow) {
             $html = Filter::trimPlus($html);
-            $allowtags = '<b><i><u><blockquote><img><strong><em><font><p><h1><h2><h3><h4><h5><h6><strike><span><br><table><tbody><th><tr><td><caption><colgroup><div>';
+            $allowtags = '<b><i><u><blockquote><img><strong><em><font>
+                          <p><h1><h2><h3><h4><h5><h6><strike><span><br>
+                          <table><tbody><th><tr><td><caption><colgroup><div>';
             $allowattributes = 'target,src,width,height,alt,title,size,face,color,align,style,class,rel,rev';
             $html = Filter::stripTagsAttributesPlus($html, $allowtags, $allowattributes);
             

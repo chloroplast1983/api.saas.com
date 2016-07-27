@@ -3,10 +3,11 @@
 namespace System\Classes;
 
 use System\Interfaces\ResponseFormatterInterface;
-use Core;
+use Marmot\Core;
 
 /**
- * 这里是基于yii2的request类作的修改,因为我们只是基于接口作框架处理开发.这里这里只是保留了接口的功能.
+ * 这里是基于yii2的request类作的修改,
+ * 因为我们只是基于接口作框架处理开发.这里这里只是保留了接口的功能.
  *
  * @author chloroplast
  * @version 1.0.20160413
@@ -29,7 +30,8 @@ class Response
 
     /**
      * @var string the response format. This determines how to convert [[data]] into [[content]]
-     * when the latter is not set. The value of this property must be one of the keys declared in the [[formatters] array.
+     * when the latter is not set.
+     * The value of this property must be one of the keys declared in the [[formatters] array.
      * By default, the following formats are supported:
      *
      * - [[FORMAT_JSON_API]]: the data will be converted into JSONAPI format, and the "Content-Type"
@@ -52,7 +54,8 @@ class Response
     public $formatters = [];
 
     /**
-     * @var string the version of the HTTP protocol to use. If not set, it will be determined via `$_SERVER['SERVER_PROTOCOL']`,
+     * @var string the version of the HTTP protocol to use.
+     * If not set, it will be determined via `$SERVER['SERVER_PROTOCOL']`,
      * or '1.1' if that is not available.
      */
     private $version;
@@ -149,7 +152,7 @@ class Response
         $this->headers = array();
 
         if ($this->version === null) {
-            if (isset($_SERVER['SERVER_PROTOCOL']) && $_SERVER['SERVER_PROTOCOL'] === 'HTTP/1.0') {
+            if (isset($SERVER['SERVER_PROTOCOL']) && $SERVER['SERVER_PROTOCOL'] === 'HTTP/1.0') {
                 $this->version = '1.0';
             } else {
                 $this->version = '1.1';
@@ -194,7 +197,8 @@ class Response
             throw new InvalidParamException("The HTTP status code is invalid: $value");
         }
         if ($text === null) {
-            $this->statusText = isset(static::$httpStatuses[$this->statusCode]) ? static::$httpStatuses[$this->statusCode] : '';
+            $this->statusText = isset(static::$httpStatuses[$this->statusCode])
+            ? static::$httpStatuses[$this->statusCode] : '';
         } else {
             $this->statusText = $text;
         }
@@ -247,7 +251,7 @@ class Response
         }
 
         if (!is_object($formatter)) {
-            $this->formatters[$this->format] = $formatter = Core::$_container->get($formatter);
+            $this->formatters[$this->format] = $formatter = Core::$container->get($formatter);
         }
         if ($formatter instanceof ResponseFormatterInterface) {
             $formatter->format($this);
