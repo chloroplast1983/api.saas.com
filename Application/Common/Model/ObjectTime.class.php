@@ -31,7 +31,7 @@ trait ObjectTime
      * 获取新闻发布时间
      * @return int $createTime 新闻发布时间
      */
-    public function getCreateTime()
+    public function getCreateTime() : int
     {
         return $this->createTime;
     }
@@ -48,7 +48,7 @@ trait ObjectTime
      * 获取新闻更新时间
      * @return int $updateTime 新闻更新时间
      */
-    public function getUpdateTime()
+    public function getUpdateTime() : int
     {
         return $this->updateTime;
     }

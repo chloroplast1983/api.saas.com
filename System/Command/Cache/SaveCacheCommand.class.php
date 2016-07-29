@@ -29,12 +29,12 @@ class SaveCacheCommand implements Interfaces\Command
         }
     }
 
-    public function execute()
+    public function execute() : bool
     {
         return Core::$cacheDriver->save($this->key, $this->data, $this->time);
     }
 
-    public function undo()
+    public function undo() : bool
     {
         return Core::$cacheDriver->delete($this->key);
     }

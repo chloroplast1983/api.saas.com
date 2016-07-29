@@ -3,10 +3,16 @@ namespace Home\Controller;
 
 class IndexController
 {
-    
+    /**
+     * @codeCoverageIgnore
+     */
     public function index()
     {
-        var_dump("hello world");
-        return true;
+        // // $a = 1;
+        // $b = $a ?? '3';
+        // var_dump($b);
+        // exit();
+        // phpinfo();
+        var_dump('Hello World');
     }
 }

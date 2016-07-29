@@ -31,7 +31,7 @@ trait ObjectStatus
      * 获取新闻状态更新时间
      * @return int $statusTime 新闻状态更新时间
      */
-    public function getStatusTime()
+    public function getStatusTime() : int
     {
         return $this->statusTime;
     }
@@ -40,16 +40,13 @@ trait ObjectStatus
      * 设置新闻状态
      * @param int $status 新闻状态
      */
-    abstract public function setStatus(int $status)
-    {
-        $this->status= in_array($status, array(STATUS_NORMAL,STATUS_DELETE)) ? $status : STATUS_NORMAL;
-    }
+    abstract public function setStatus(int $status);
 
     /**
      * 获取新闻状态
      * @return int $status 新闻状态
      */
-    public function getStatus()
+    public function getStatus() : int
     {
         return $this->status;
     }

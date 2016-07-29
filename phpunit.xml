@@ -23,6 +23,9 @@
         <testsuite name="Application">
             <directory>./tests/UnitTest/Application/Application</directory>
         </testsuite>
+        <testsuite name="Area">
+            <directory>./tests/UnitTest/Application/Area</directory>
+        </testsuite>
         <testsuite name="Common">
             <directory>./tests/UnitTest/Application/Common</directory>
         </testsuite>
@@ -35,8 +38,8 @@
         <testsuite name="User">
             <directory>./tests/UnitTest/Application/User</directory>
         </testsuite>
-        <testsuite name="Web">
-            <directory>./tests/UnitTest/Application/Web</directory>
+        <testsuite name="Shop">
+            <directory>./tests/UnitTest/Application/Shop</directory>
         </testsuite>
         <testsuite name="Saas">
             <directory>./tests/UnitTest/Application/Saas</directory>
@@ -53,6 +56,7 @@
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">./System/</directory>
+            <directory suffix=".php">./Application/</directory>
         </whitelist>
     </filter>
 

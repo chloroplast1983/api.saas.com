@@ -42,7 +42,7 @@ abstract class Db implements DbLayer
      * @param array $insertSqlArr 需要插入数据库的数据数组
      * @param bool $returnLastInsertId 是否返回最新插入的id
      */
-    public function insert($insertSqlArr, $returnLastInsertId = true)
+    public function insert($insertSqlArr, $returnLastInsertId = true) : int
     {
         $rows = Core::$dbDriver->insert($this->tname($this->table), $insertSqlArr);
         return $returnLastInsertId ? Core::$dbDriver->lastInertId() : $rows;
@@ -67,7 +67,7 @@ abstract class Db implements DbLayer
      * @param array $setSqlArr 需要更新的数据数组
      * @param array | string $wheresqlArr 匹配条件
      */
-    public function update(array $setSqlArr, $whereSqlArr)
+    public function update(array $setSqlArr, $whereSqlArr) : bool
     {
         return Core::$dbDriver->update($this->tname($this->table), $setSqlArr, $whereSqlArr);
     }
@@ -75,7 +75,7 @@ abstract class Db implements DbLayer
     /**
      * 为表添加前缀
      */
-    private function tname($table)
+    private function tname($table) : string
     {
 
         return $this->tablepre.$table;

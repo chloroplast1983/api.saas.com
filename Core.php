@@ -133,10 +133,22 @@ class Core
                     $classFile = str_replace('\\', '/', $className) . '.class.php';
                     $classFile = S_ROOT.'Application/'.$classFile;
                 }
+
                 if (file_exists($classFile)) {
                       include_once $classFile;
                 }
-          
+            }
+        );
+        //加载ut测试文件
+        spl_autoload_register(
+            function ($className) {
+
+                $unitTestFile = str_replace('\\', '/', $className) . '.php';
+                $unitTestFile = S_ROOT.'tests/UnitTest/Application/'.$unitTestFile;
+
+                if (file_exists($unitTestFile)) {
+                    include_once $unitTestFile;
+                }
             }
         );
         //加载框架Application文件的autoload,匿名函数 -- 开始

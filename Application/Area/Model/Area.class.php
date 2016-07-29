@@ -1,6 +1,8 @@
 <?php
 namespace Area\Model;
 
+use Common;
+
 /**
  * 地区表,主要描述省市信息
  * @author chloroplast
@@ -9,7 +11,10 @@ namespace Area\Model;
 
 class Area
 {
-
+    /**
+     * 使用对象唯一标识性状
+     */
+    use Common\Model\ObjectIdentify;
     /**
      * @var integer $id 地区id
      */
