@@ -37,6 +37,7 @@
 * SELECT-CITY: 市选择器控件规范
 * SELECT-DISTRICT: 区选择器控件规范
 * INPUT-ADDRESS: 地址控件规范
+* INPUT-TITLE: 通用文字输入控件规范
 * INPUT-PRODUCT-TITLE: 商品标题输入控件规范
 * INPUT-PRODUCT-TYPE: 商品分类输入控件规范
 * INPUT-COMMON-PRODUCT-SPECIFICATION: 通用商品规格输入控件规范
@@ -315,6 +316,20 @@
 * `ER-0101`,邮政编码不能为空
 * `ER-0113`,邮政编码长度超过限制
 
+###INPUT-TITLE
+
+**通用文字输入**控件规范,用于表示通用输入框
+
+####规则
+
+* min: 5
+* max: 30
+
+####错误提示
+
+* `ER-0101`,不能为空
+* `ER-0113`,长度不正确
+
 ###INPUT-PRODUCT-TITLE
 
 **商品标题**控件规范,用于表述商品标题
@@ -327,7 +342,7 @@
 ####错误提示
 
 * `ER-0101`,商品标题不能为空
-* `ER-0121`,商品标题格式不正确
+* `ER-0113`,商品标题长度不正确
 
 ###INPUT-PRODUCT-TYPE
 
